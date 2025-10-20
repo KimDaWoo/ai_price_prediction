@@ -1,0 +1,255 @@
+/* 전체 화면 크기 지정 */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  background-color: #fefefe;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* 홈 컨테이너 */
+.home-container {
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  padding: 20px;
+  background-color: #fefefe;
+}
+
+/* MaterialRegionSelector 스타일 */
+.material-region-selector {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background-color: #fefefe;
+  text-align: center;
+}
+
+.material-region-selector h1 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+/* 폼 영역 */
+.material-region-selector-main {
+  width: 100%;
+  display: flex; /* Flexbox 활성화 */
+  justify-content: space-between; /* 가로 방향 정렬 */
+  align-items: flex-start; /* 세로 방향 정렬 */
+  gap: 20px; /* 각 자식 요소 간 간격 설정 */
+}
+
+.material-region-selector-main .select-area {
+  margin-top: 104px;
+}
+
+
+.material-region-selector-main > div {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.material-region-selector-main > div:first-child {
+  width: 34%;
+}
+
+.material-region-selector-main > div:last-child {
+  width: 56%;
+}
+
+@media (max-width: 1250px) {
+  .material-region-selector-main {
+    flex-direction: column; /* 세로 정렬로 변경 */
+    gap: 0; /* 간격 제거 */
+  }
+
+  .material-region-selector-main > div:first-child,
+  .material-region-selector-main > div:last-child {
+    width: 100%; /* 자식 요소의 너비를 100%로 설정 */
+  }
+}
+
+
+.material-region-selector-main select {
+  margin-bottom: 40px;
+}
+
+
+.material-region-selector select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  font-size: 1rem;
+  color: #333;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.material-region-selector select:focus {
+  border: 1px solid #3D40E0;
+}
+
+/* 버튼 스타일 */
+.material-region-selector button {
+  width: 100%;
+  padding: 16px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background-color: #3D40E0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.material-region-selector button:active {
+  background-color: #2C2FAE;
+}
+
+.view-mode-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 60px;
+}
+
+
+/* 기본 버튼 스타일 */
+.view-mode-buttons button {
+  width: 20%;
+  padding: 12px 20px;
+  font-size: 1rem;
+  color: #333455; /* 선택되지 않은 버튼의 기본 텍스트 색상 */
+  background-color: #EEEEF3; /* 선택되지 않은 버튼의 기본 배경색 */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.view-mode-buttons button:hover {
+  opacity: 0.7; /* 모든 버튼의 호버 시 효과 */
+}
+
+/* 선택된 버튼 스타일 */
+.view-mode-buttons button.selected {
+  background-color: #ECECFC; /* 선택된 버튼의 배경색 */
+  color: #3E40E0; /* 선택된 버튼의 텍스트 색상 */
+}
+
+.header {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.selector-group {
+  display: flex;
+  flex-direction: column; /* 세로 정렬 */
+  gap: 20px; /* 드롭다운 간격 */
+}
+
+.dropdown select {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+/* 기본 드롭다운 스타일 */
+.dropdown-default {
+  background-color: #EEEEF3;
+  color: #333455;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.dropdown-selected {
+  background-color: #ECECFC;
+  color: #3E40E0;
+  border: 1px solid #3E40E0;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+/* 기본 버튼 스타일 */
+.active-button {
+  background-color: #3D40E0;
+  color: white;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.material-region-selector-main .select-area .disabled-button {
+  background-color: #CCCCCC;
+  color: #666666;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+}
+
+.dropdown select:focus {
+  border-color: #3d40e0;
+  outline: none;
+}
+
+.button-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.table-container {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow-y: auto;
+  max-height: 600px;
+}
+
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-container th, .table-container td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.table-container th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.apexcharts-canvas {
+  width: 100%;
+  max-height: 540px;
+}
+
+.loading-container {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 540px;
+  width: auto;
+}
